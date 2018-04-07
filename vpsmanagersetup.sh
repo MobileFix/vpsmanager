@@ -84,7 +84,7 @@ then
 	chmod +x /bin/ajuda
 	wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/sshmonitor2.sh -O /bin/sshmonitor
 	chmod +x /bin/sshmonitor
-    wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/badvpnsetup.sh -O /bin/badvpnsetup
+    wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/badvpnsetup2.sh -O /bin/badvpnsetup
 	chmod +x /bin/badvpnsetup
     wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/tcptweaker.sh -O /bin/tcptweaker
 	chmod +x /bin/tcptweaker
@@ -155,7 +155,7 @@ then
 	chmod +x /bin/ajuda
 	wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/sshmonitor2.sh -O /bin/sshmonitor
 	chmod +x /bin/sshmonitor
-    wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/badvpnsetup.sh -O /bin/badvpnsetup
+    wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/badvpnsetup2.sh -O /bin/badvpnsetup
 	chmod +x /bin/badvpnsetup
     wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/tcptweaker.sh -O /bin/tcptweaker
 	chmod +x /bin/tcptweaker
