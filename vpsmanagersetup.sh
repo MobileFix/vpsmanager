@@ -96,6 +96,8 @@ then
 	chmod +x /bin/otimizar
     wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/speedtest.sh -O /bin/speedtest
 	chmod +x /bin/speedtest
+	wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/speedtest.py -O /bin/speedtest.py
+	chmod +x /bin/speedtest.py
     wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/detalhes.sh -O /bin/detalhes
 	chmod +x /bin/detalhes
 	if [ ! -f "/etc/init.d/squid3" ]
@@ -165,6 +167,8 @@ then
 	chmod +x /bin/otimizar
     wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/speedtest.sh -O /bin/speedtest
 	chmod +x /bin/speedtest
+    wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/speedtest.py -O /bin/speedtest.py
+	chmod +x /bin/speedtest.py
     wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/detalhes.sh -O /bin/detalhes
 	chmod +x /bin/detalhes
 	if [ ! -f "/etc/init.d/squid" ]
