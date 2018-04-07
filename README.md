@@ -1,2 +1,3 @@
-# vpsmanager
-TwoSSH VpsManager
+# TwoSSH VpsManager
+
+Script para configuração de vps
