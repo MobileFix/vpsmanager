@@ -13,8 +13,7 @@ tput setaf 2 ; tput bold ; printf '%s' "sshmonitor " ; tput setaf 7 ; printf '%s
 tput sgr0
 tput setaf 2 ; tput bold ; printf '%s' "userbackup" ; tput setaf 7 ; printf '%s' "- " ; tput setaf 3 ; echo "Cria uma cópia de todos os usuários e senhas" ; echo ""
 tput sgr0
-tput setaf 2 ; tput bold ; printf '%s' "badvpnsetup" ; tput setaf 7 ; printf '%s' "- " ; tput setaf 3 ; echo "Compila e instala automaticamente o programa
-BadVPN" ; echo ""
+tput setaf 2 ; tput bold ; printf '%s' "badvpnsetup" ; tput setaf 7 ; printf '%s' "- " ; tput setaf 3 ; echo "Compila e instala automaticamente o programa BadVPN" ; echo ""
 tput sgr0
 tput setaf 2 ; tput bold ; printf '%s' "tcptweaker" ; tput setaf 7 ; printf '%s' "- " ; tput setaf 3 ; echo "Altera algumas configurações de rede no sistema para reduzir a latência e melhorar a velocidade" ; echo ""
 tput sgr0
