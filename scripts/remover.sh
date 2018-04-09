@@ -1,4 +1,5 @@
 #!/bin/bash
+clear
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%32s%s%-13s\n' "Remover Usuário SSH" ; tput sgr0
 echo ""
 tput bold ; echo "Lista de usuários:" ; echo "" ; tput sgr0
