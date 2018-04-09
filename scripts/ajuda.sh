@@ -38,5 +38,5 @@ tput setaf 2 ; tput bold ; printf '%s' "detalhes " ; tput setaf 7 ; printf '%s' 
 tput sgr0
 tput setaf 2 ; tput bold ; printf '%s' "banner " ; tput setaf 7 ; printf '%s' "- " ; tput setaf 3 ; echo "Criar um banner em seu vps" ; echo ""
 tput sgr0
-tput setaf 2 ; tput bold ; printf '%s' "firewall" ; tput setaf 7 ; printf '%s' "- " ; tput setaf 3 ; echo "Ant Torrent e DDoS" ; echo ""
+tput setaf 2 ; tput bold ; printf '%s' "firewall " ; tput setaf 7 ; printf '%s' "- " ; tput setaf 3 ; echo "Ant Torrent e DDoS" ; echo ""
 tput sgr0
