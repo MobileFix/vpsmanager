@@ -1,4 +1,5 @@
 #!/bin/bash
+clear
 database="/root/usuarios.db"
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%20s%s\n' "   Alterar limite de conexões SSH simultâneas   " ; tput sgr0
 if [ ! -f "$database" ]
