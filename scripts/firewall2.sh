@@ -1,5 +1,5 @@
 #!/bin/bash
-
+clear
 # by Haboryn
 # Creditos:
 # SSHTLS
@@ -20,14 +20,14 @@ iptables -t mangle -X
 
 echo Bloqueando tudo..
 sleep 1
-# Mudando a politica - ComeÁa bloqueando tudo
+# Mudando a politica - Come√ßa bloqueando tudo
 iptables -P INPUT DROP
 iptables -P OUTPUT DROP
 iptables -P FORWARD DROP
 
 echo Liberando conexoes pre-estabelecidas...
 sleep 1
-# Libera conexıes pre-estabelecidas
+# Libera conex√µes pre-estabelecidas
 iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 iptables -A OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 iptables -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT
