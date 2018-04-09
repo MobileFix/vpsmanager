@@ -1,5 +1,6 @@
 #!/bin/bash
-tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "User Backup 1.2 by Phreaker56" ; tput sgr0
+clear
+tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "User Backup SSH" ; tput sgr0
 tput setaf 3 ; tput bold ; echo ""
 echo "Atenção: Este é um script experimental e sem garantias, use por sua conta e risco."
 echo "Este script serve para criar uma cópia de todos os usuários e senhas"
