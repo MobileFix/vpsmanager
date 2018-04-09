@@ -1,3 +1,4 @@
+clear
 tput setaf 2 ; tput bold ; echo "------------------------------------" ; tput sgr0
 echo ""
 tput setaf 2 ; tput bold ; echo "   Execute por sua conta e risco" ; tput sgr0
