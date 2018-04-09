@@ -1,4 +1,5 @@
 #!/bin/bash
+clear
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%33s%s%-12s\n' "Mudar data de expiração" ; tput sgr0
 echo ""
 tput bold ; echo "Lista de usuários e datas de expiração:" ; tput sgr0
