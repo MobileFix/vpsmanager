@@ -1,4 +1,5 @@
 #!/bin/bash
+clear
 datenow=$(date +%s)
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%45s%-10s%-5s\n' "Removedor de contas expiradas" ""
 printf '%-20s%-25s%-20s\n' "Usuário" "Data de expiração" "Estado/Ação" ; echo "" ; tput sgr0
