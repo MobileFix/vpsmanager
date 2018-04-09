@@ -1,4 +1,5 @@
 #!/bin/bash
+clear
 database="/root/usuarios.db"
 echo $$ > /tmp/pids
 if [ ! -f "$database" ]
