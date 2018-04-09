@@ -1,3 +1,4 @@
+clear
 tput setaf 2 ; tput bold ; echo "      -------------------------------------------------" ; tput sgr0
 echo ""
 tput setaf 2 ; tput bold ; echo "Apos digitar 1, digite seu banner e salve com Crtl X, Y e Enter" ; tput sgr0
