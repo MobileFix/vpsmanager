@@ -1,4 +1,5 @@
 #!/bin/bash
+clear
 payload="/etc/squid3/payload.txt"
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-10s\n' "Remover Host do Squid3" ; tput sgr0
 if [ ! -f "$payload" ]
