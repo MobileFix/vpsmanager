@@ -40,6 +40,37 @@ rm /root/ExpCleaner.sh /root/CriarUsuario.sh /root/sshlimiter.sh > /dev/null
 apt-get install squid3 bc screen nano unzip dos2unix wget -y
 killall apache2
 apt-get purge apache2 -y
+sshd_config(){ echo "# © TwoSSH | 2018 All rights reserved
+#
+Port 22 
+Port 443
+Protocol 2 
+KeyRegenerationInterval 3600 
+ServerKeyBits 1024 
+SyslogFacility AUTH 
+LogLevel INFO 
+LoginGraceTime 120 
+PermitRootLogin yes 
+StrictModes yes 
+RSAAuthentication yes 
+PubkeyAuthentication yes 
+IgnoreRhosts yes 
+RhostsRSAAuthentication no 
+HostbasedAuthentication no 
+PermitEmptyPasswords no 
+ChallengeResponseAuthentication no 
+PasswordAuthentication yes 
+X11Forwarding yes 
+X11DisplayOffset 10 
+PrintMotd no 
+PrintLastLog yes 
+TCPKeepAlive yes 
+#UseLogin no 
+AcceptEnv LANG LC_* 
+Subsystem sftp /usr/lib/openssh/sftp-server 
+UsePAM yes" > /etc/ssh/sshd_config
+}
+sshd_config
 if [ -f "/usr/sbin/ufw" ] ; then
 	ufw allow 443/tcp ; ufw allow 80/tcp ; ufw allow 3128/tcp ; ufw allow 8799/tcp ; ufw allow 8080/tcp
 fi
@@ -51,10 +82,6 @@ then
 	cat /tmp/sqd1 /tmp/sqd2 /tmp/sqd3 > /etc/squid3/squid.conf
 	wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/payload.txt -O /etc/squid3/payload.txt
 	echo " " >> /etc/squid3/payload.txt
-	grep -v "^Port 443" /etc/ssh/sshd_config > /tmp/ssh && mv /tmp/ssh /etc/ssh/sshd_config
-	echo "Port 443" >> /etc/ssh/sshd_config
-	grep -v "^PasswordAuthentication yes" /etc/ssh/sshd_config > /tmp/passlogin && mv /tmp/passlogin /etc/ssh/sshd_config
-	echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
 	wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/banner.sh -O /bin/banner
 	chmod +x /bin/banner
 	wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/firewall.sh -O /bin/firewall
@@ -122,10 +149,6 @@ then
 	cat /tmp/sqd1 /tmp/sqd2 /tmp/sqd3 > /etc/squid/squid.conf
 	wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/payload.txt -O /etc/squid/payload.txt
 	echo " " >> /etc/squid/payload.txt
-	grep -v "^Port 443" /etc/ssh/sshd_config > /tmp/ssh && mv /tmp/ssh /etc/ssh/sshd_config
-	echo "Port 443" >> /etc/ssh/sshd_config
-	grep -v "^PasswordAuthentication yes" /etc/ssh/sshd_config > /tmp/passlogin && mv /tmp/passlogin /etc/ssh/sshd_config
-	echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
 	wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/banner.sh -O /bin/banner
 	chmod +x /bin/banner
 	wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/firewall.sh -O /bin/firewall
