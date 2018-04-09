@@ -1,4 +1,5 @@
 #!/bin/bash
+clear
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-15s\n' "Criar Usuário SSH" ; tput sgr0
 echo ""
 read -p "Nome do usuário: " username
