@@ -1,5 +1,5 @@
 #!/bin/bash
-#
+clear
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-15s\n' "Detalhes Servidor 1.0" ; tput sgr0
 echo ""
 echo ""
