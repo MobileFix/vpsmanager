@@ -5,19 +5,17 @@ tput setaf 2 ; tput bold ; echo "Apos digitar 1, digite seu banner e salve com C
 echo ""
 tput setaf 2 ; tput bold ; echo "      -------------------------------------------------" ; tput sgr0
 echo ""
-echo "Digite 1 para instar seu banner";
+echo "Digite 1 para instalar seu banner";
 echo "ou";
 echo "Digite 2 ou Crtl C para Cancelar";
 sleep 2s
 read protecao
 if [[ "$protecao" = '1' ]]; then
-        echo "Banner /etc/bannerssh" >> /etc/ssh/sshd_config
 	nano /etc/bannerssh
 fi
 if [[ "$protecao" = '2' ]]; then
         exit
 fi
-service ssh restart
 sleep 1s
 clear
-tput setaf 2 ; tput bold ; echo "By Samuel Lacerda" ; tput sgr0
+tput setaf 2 ; tput bold ; echo "By TwoSSH" ; tput sgr0
