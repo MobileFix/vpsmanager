@@ -68,9 +68,13 @@ TCPKeepAlive yes
 #UseLogin no 
 AcceptEnv LANG LC_* 
 Subsystem sftp /usr/lib/openssh/sftp-server 
-UsePAM yes" > /etc/ssh/sshd_config
+UsePAM yes
+Banner /etc/bannerssh" > /etc/ssh/sshd_config
 }
 sshd_config
+banner_config(){ echo "© TwoSSH | 2018 All rights reserved" > /etc/bannerssh
+}
+banner_config
 if [ -f "/usr/sbin/ufw" ] ; then
 	ufw allow 443/tcp ; ufw allow 80/tcp ; ufw allow 3128/tcp ; ufw allow 8799/tcp ; ufw allow 8080/tcp
 fi
