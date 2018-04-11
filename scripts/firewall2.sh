@@ -59,11 +59,13 @@ echo Liberando SSH........
 sleep 1
 #Liberar SSH
 iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+iptables -A INPUT -p tcp --dport 144 -j ACCEPT
 iptables -A INPUT -p tcp --dport 443 -j ACCEPT
 iptables -A OUTPUT -p tcp --dport 22 -j ACCEPT
+iptables -A OUTPUT -p tcp --dport 144 -j ACCEPT
 iptables -A OUTPUT -p tcp --dport 443 -j ACCEPT
 
-echo Liberando SQUID.........
+echo Liberando PROXY.........
 sleep 1
 #Liberar SQUID
 iptables -A INPUT -p tcp --dport 8080 -j ACCEPT
