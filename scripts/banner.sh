@@ -11,7 +11,6 @@ echo "Digite 2 ou Crtl C para Cancelar";
 sleep 2s
 read protecao
 if [[ "$protecao" = '1' ]]; then
-        echo "Banner /etc/bannerssh" >> /etc/ssh/sshd_config
 	nano /etc/bannerssh
 fi
 if [[ "$protecao" = '2' ]]; then
