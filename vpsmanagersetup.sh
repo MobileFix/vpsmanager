@@ -3,7 +3,7 @@ clear
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "TwoSSH " ; tput sgr0
 tput setaf 3 ; tput bold ; echo "" ; echo "Este script irá:" ; echo ""
 echo "● Instalar e configurar o proxy squid nas portas 80, 3128, 8080 e 8799" ; echo "  para permitir conexões SSH para este servidor"
-echo "● Configurar o OpenSSH para rodar na porta 22"
+echo "● Configurar o OpenSSH para rodar nas portas 22 e 443"
 echo "● Instalar um conjunto de scripts como comandos do sistema para o gerenciamento de usuários" ; tput sgr0
 echo ""
 tput setaf 3 ; tput bold ; read -n 1 -s -p "Aperte qualquer tecla para continuar..." ; echo "" ; echo "" ; tput sgr0
@@ -92,8 +92,6 @@ then
 	chmod +x /bin/tcptweaker
     wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/userbackup.sh -O /bin/userbackup
 	chmod +x /bin/userbackup
-    wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/openbr.sh -O /bin/openvpnsetup
-	chmod +x /bin/openvpnsetup
     wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/otimizar.sh -O /bin/otimizar
 	chmod +x /bin/otimizar
     wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/speedtest.sh -O /bin/speedtest
@@ -159,8 +157,6 @@ then
 	chmod +x /bin/tcptweaker
     wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/userbackup.sh -O /bin/userbackup
 	chmod +x /bin/userbackup
-    wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/openbr.sh -O /bin/openvpnsetup
-	chmod +x /bin/openvpnsetup
     wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/otimizar.sh -O /bin/otimizar
 	chmod +x /bin/otimizar
     wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/speedtest.sh -O /bin/speedtest
