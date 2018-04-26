@@ -92,7 +92,7 @@ then
 	chmod +x /bin/tcptweaker
     wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/userbackup.sh -O /bin/userbackup
 	chmod +x /bin/userbackup
-    wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/openvpn.sh -O /bin/openvpnsetup
+    wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/openbr.sh -O /bin/openvpnsetup
 	chmod +x /bin/openvpnsetup
     wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/otimizar.sh -O /bin/otimizar
 	chmod +x /bin/otimizar
@@ -159,7 +159,7 @@ then
 	chmod +x /bin/tcptweaker
     wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/userbackup.sh -O /bin/userbackup
 	chmod +x /bin/userbackup
-    wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/openvpn.sh -O /bin/openvpnsetup
+    wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/openbr.sh -O /bin/openvpnsetup
 	chmod +x /bin/openvpnsetup
     wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/otimizar.sh -O /bin/otimizar
 	chmod +x /bin/otimizar
