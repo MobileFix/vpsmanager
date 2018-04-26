@@ -92,8 +92,8 @@ then
 	chmod +x /bin/tcptweaker
     wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/userbackup.sh -O /bin/userbackup
 	chmod +x /bin/userbackup
-    wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/openvpn.sh -O /bin/openvpn
-	chmod +x /bin/openvpn
+    wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/openvpn.sh -O /bin/openvpnsetup
+	chmod +x /bin/openvpnsetup
     wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/otimizar.sh -O /bin/otimizar
 	chmod +x /bin/otimizar
     wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/speedtest.sh -O /bin/speedtest
@@ -159,8 +159,8 @@ then
 	chmod +x /bin/tcptweaker
     wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/userbackup.sh -O /bin/userbackup
 	chmod +x /bin/userbackup
-    wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/openvpn.sh -O /bin/openvpn
-	chmod +x /bin/openvpn
+    wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/openvpn.sh -O /bin/openvpnsetup
+	chmod +x /bin/openvpnsetup
     wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/otimizar.sh -O /bin/otimizar
 	chmod +x /bin/otimizar
     wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/speedtest.sh -O /bin/speedtest
