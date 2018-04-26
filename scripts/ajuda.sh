@@ -28,8 +28,6 @@ tput setaf 2 ; tput bold ; printf '%s' "badvpnsetup " ; tput setaf 7 ; printf '%
 tput sgr0
 tput setaf 2 ; tput bold ; printf '%s' "tcptweaker " ; tput setaf 7 ; printf '%s' "- " ; tput setaf 3 ; echo "Altera algumas configurações de rede no sistema para reduzir a latência e melhorar a velocidade" ; echo ""
 tput sgr0
-tput setaf 2 ; tput bold ; printf '%s' "openvpnsetup " ; tput setaf 7 ; printf '%s' "- " ; tput setaf 3 ; echo "Instalador do OpenVpn e interface em português" ; echo ""
-tput sgr0
 tput setaf 2 ; tput bold ; printf '%s' "speedtest " ; tput setaf 7 ; printf '%s' "- " ; tput setaf 3 ; echo "Teste de conexão interna do servidor" ; echo ""
 tput sgr0
 tput setaf 2 ; tput bold ; printf '%s' "otimizar " ; tput setaf 7 ; printf '%s' "- " ; tput setaf 3 ; echo "Atualizar pacotes, limpar memória RAM e cache" ; echo ""
