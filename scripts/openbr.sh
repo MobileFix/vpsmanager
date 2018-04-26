@@ -96,13 +96,13 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 	while :
 	do
 	clear
-		echo "Instalador OpenVPN TwoSSH"
+		echo "Instalador OpenVPN Pt-BR @phoenix1203"
 		echo ""
 		echo "Parece que o OpenVPN já está instalado!"
 		echo ""
 		echo "O que você quer fazer?"
-		echo "   1) Criar um novo certificado de usuário"
-		echo "   2) Deletar certificado de usuário"
+		echo "   1) Adicione um certificado para um novo usuário"
+		echo "   2) Revogar certificado de usuário"
 		echo "   3) Remover o OpenVPN"
 		echo "   4) Sair"
 		read -p "Selecione uma opção [1-4]: " option
@@ -128,7 +128,7 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 				exit 5
 			fi
 			echo ""
-			echo "Selecione o certificado de cliente existente que você deseja deletar"
+			echo "Selecione o certificado de cliente existente que você deseja revogar"
 			tail -n +2 /etc/openvpn/easy-rsa/pki/index.txt | grep "^V" | cut -d '=' -f 2 | nl -s ') '
 			if [[ "$NUMBEROFCLIENTS" = '1' ]]; then
 				read -p "Selecione um cliente [1]: " CLIENTNUMBER
@@ -210,7 +210,7 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 	done
 else
 	clear
-	echo "Bem-vindo ao instalador do OpenVPN"
+	echo "Bem-vindo ao instalador seguro do OpenVPN"
 	echo ""
 	# Configuração do OpenVPN e criação do primeiro usuário
 	echo "Preciso fazer algumas perguntas antes de iniciar a configuração"
@@ -494,8 +494,6 @@ WantedBy=multi-user.target" > /etc/systemd/system/iptables.service
 		echo "proto tcp" >> /etc/openvpn/server.conf
 	fi
 	echo "dev tun
-sndbuf 0
-rcvbuf 0
 user nobody
 group $NOGROUP
 persist-key
@@ -672,10 +670,9 @@ verb 3" >> /etc/openvpn/server.conf
 	elif [[ "$PROTOCOL" = 'TCP' ]]; then
 		echo "proto tcp-client" >> /etc/openvpn/client-template.txt
 	fi
-	echo "sndbuf 0
-rcvbuf 0
-remote portalrecarga.vivo.com.br $PORT
+	echo "remote portalrecarga.vivo.com.br $PORT
 http-proxy $IP 80
+dev tun
 resolv-retry infinite
 nobind
 persist-key
