@@ -198,8 +198,8 @@ else
 		;;
 	esac
 	echo ""
-	echo "Qual porta você deseja usar, melhor deixar essa ai, se for localweb usa a porta 443..."
-	read -p "Port: " -e -i 1194 PORT
+	echo "Qual porta você deseja usar, melhor deixar essa ai se não se importar..."
+	read -p "Port: " -e -i 443 PORT
 	echo ""
 	echo "Qual DNS você deseja usar ?"
 	echo "   1) Sistema(Recomendado)"
