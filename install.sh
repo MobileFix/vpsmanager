@@ -47,8 +47,16 @@ sleep 2
 echo -e "\n\033[1;33mAguarde\033[1;32m.\033[1;31m.\033[1;33m.\033[0m"
 wget -O /etc/ssh/sshd_config https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/sshd_config > /dev/null 2>&1
 service ssh restart
+banner_config(){ echo "© TwoSSH | 2018 All rights reserved" > /etc/bannerssh
+}
+banner_config
 sleep 2
 echo -e "\n\033[1;37m[\033[1;32mADICIONANDO FUNCOES !\033[1;37m]\033[0m"
+if grep "/bin/false" /etc/shells >/dev/null; then
+	echo -n
+else
+	echo "/bin/false" >> /etc/shells
+fi
 if [[ -d /etc/squid3/ ]]; then
 wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/squid1.txt -O /tmp/sqd1 > /dev/null 2>&1
 echo "acl url3 dstdomain -i $ipdovps" > /tmp/sqd2
@@ -135,6 +143,4 @@ cd
 echo "menu" >> .bash_profile
 rm /root/install.sh
 clear
-echo -e "\n\033[1;37m[\033[1;31mâ€¢ \033[1;32mINSTALACAO CONCLUIDA !\033[1;31mâ€¢ \033[1;37m]\033[0m"
-echo ""
-echo -e "\n\033[1;37m[\033[1;31mâ€¢ \033[1;32mABRA O PAINEL DIGITANDO:\033[01;31m[\033[01;37m menu \033[1;31mâ€¢ \033[1;37m]\033[0m"
+echo -e "\n\033[1;37m[\033[1;31m• \033[1;32mINSTALACAO CONCLUIDA !\033[1;31m• \033[1;37m]\033[0m"
