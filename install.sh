@@ -34,7 +34,7 @@ rm /bin/criarusuario /bin/sshmonitor /bin/limitar /bin/criarteste /bin/expcleane
 echo -e "\n\033[1;37m[\033[1;32mINSTALANDO PACOTES !\033[1;37m]\033[0m"
 apt-get install squid3 nano python-pip inxi python htop -y > /dev/null 2>&1
 echo -e "\n\033[1;33mAguarde\033[1;32m.\033[1;31m.\033[1;33m.\033[0m"
-apt-get install unzip dos2unix bc screen wget nload -y > /dev/null 2>&1
+apt-get install unzip dos2unix bc screen wget nload dropbear -y > /dev/null 2>&1
 pip install speedtest-cli > /dev/null 2>&1
 killall apache2 > /dev/null 2>&1
 apt-get purge apache2 -y > /dev/null 2>&1
@@ -44,10 +44,8 @@ if [ -f "/usr/sbin/ufw" ] ; then
 fi
 sleep 2
 echo -e "\n\033[1;33mAguarde\033[1;32m.\033[1;31m.\033[1;33m.\033[0m"
-grep -v "^Port 443 " /etc/ssh/sshd_config > /tmp/ssh && mv /tmp/ssh /etc/ssh/sshd_config
-echo "Port 443" >> /etc/ssh/sshd_config
-grep -v "^PasswordAuthentication yes" /etc/ssh/sshd_config > /tmp/passlogin && mv /tmp/passlogin /etc/ssh/sshd_config
-echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
+wget -O /etc/ssh/sshd_config https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/sshd_config
+service ssh restart
 sleep 2
 echo -e "\n\033[1;37m[\033[1;32mADICIONANDO FUNCOES !\033[1;37m]\033[0m"
 if [[ -d /etc/squid3/ ]]; then
@@ -106,6 +104,7 @@ wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/menu.sh 
 chmod +x /bin/menu
 wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/criarteste.sh -O /bin/criarteste > /dev/null 2>&1
 chmod +x /bin/criarteste
+wget -O /etc/default/dropbear https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/drop_config
 echo -e "\n\033[1;37m[\033[1;32mFINALIZANDO INSTALACAO !\033[1;37m]\033[0m"
 sed -i '3i\127.0.0.1 d1n212ccp6ldpw.cloudfront.net\' /etc/hosts
 sleep 1
@@ -119,6 +118,7 @@ sed -i '7i\127.0.0.1 navegue.vivo.com.br/controle/\' /etc/hosts
 sleep 2
 echo -e "\n\033[1;33mAguarde\033[1;32m.\033[1;31m.\033[1;33m.\033[0m"
 service ssh restart > /dev/null 2>&1
+service dropbear restart > /dev/null 2>&1
 if [[ -e /etc/squid/squid.conf ]]; then
 squid -k reconfigure > /dev/null 2>&1
 service squid restart > /dev/null 2>&1
