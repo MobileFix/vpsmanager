@@ -36,8 +36,8 @@ apt-get install squid3 nano python-pip inxi python htop -y > /dev/null 2>&1
 echo -e "\n\033[1;33mAguarde\033[1;32m.\033[1;31m.\033[1;33m.\033[0m"
 apt-get install unzip dos2unix bc screen wget nload dropbear -y > /dev/null 2>&1
 pip install speedtest-cli > /dev/null 2>&1
-apt-get install apache2 zip -y
-sed -i "s/Listen 80/Listen 81/g" /etc/apache2/ports.conf
+apt-get install apache2 zip -y > /dev/null 2>&1
+sed -i "s/Listen 80/Listen 81/g" /etc/apache2/ports.conf > /dev/null 2>&1
 service apache2 restart
 echo -e "\n\033[1;37m[\033[1;32mDEFININDO CONFIGURACOES !\033[1;37m]\033[0m"
 if [ -f "/usr/sbin/ufw" ] ; then
@@ -45,7 +45,7 @@ if [ -f "/usr/sbin/ufw" ] ; then
 fi
 sleep 2
 echo -e "\n\033[1;33mAguarde\033[1;32m.\033[1;31m.\033[1;33m.\033[0m"
-wget -O /etc/ssh/sshd_config https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/sshd_config
+wget -O /etc/ssh/sshd_config https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/sshd_config > /dev/null 2>&1
 service ssh restart
 sleep 2
 echo -e "\n\033[1;37m[\033[1;32mADICIONANDO FUNCOES !\033[1;37m]\033[0m"
