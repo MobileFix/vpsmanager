@@ -1,27 +1,28 @@
 #!/bin/bash
+clear
 #by TwoSSH
 fun_menu2 () {
 system=$(cat /etc/issue.net)
-echo -e "\033[1;33m=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—\033[0m"
+echo -e "\033[1;33m=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×\033[0m"
 echo -e "\033[1;32mHORA\033[1;37m: \033[1;31m$(printf '%(%H:%M:%S)T\n')\033[0m   \033[1;32mDATA\033[1;37m: \033[1;31m$(printf '%(%d/%m/%Y)T\n')\033[0m"
-echo -e "\033[1;33m=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—\033[0m"
+echo -e "\033[1;33m=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×\033[0m"
 if [ "$system" ]; then
 echo -e "\033[1;32mSistema\033[1;37m: \033[1;31m$system\033[0m"
 else
 echo -e "\033[1;32mSistema: \033[1;33m[ \033[1;31mNao disponivel \033[0m"
 fi
-echo -e "\033[1;33m=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—\033[0m"
-echo -e "\033[1;36m13\033[1;31m â€¢ \033[1;36mADICIONAR HOST"
-echo -e "\033[1;36m14\033[1;31m â€¢ \033[1;36mREMOVER HOST"
-echo -e "\033[1;36m15\033[1;31m â€¢ \033[1;36mUSER BACKUP"
-echo -e "\033[1;36m16\033[1;31m â€¢ \033[1;36mSPEED TEST"
-echo -e "\033[1;36m17\033[1;31m â€¢ \033[1;36mTRAFEGO"
-echo -e "\033[1;36m18\033[1;31m â€¢ \033[1;36mTCPTWEAKER"
-echo -e "\033[1;36m19\033[1;31m â€¢ \033[1;36mDETALHES"
-echo -e "\033[1;36m20\033[1;31m â€¢ \033[1;36mOTIMIZAR"
-echo -e "\033[1;36m21\033[1;31m â€¢ \033[1;36mVOLTAR"
-echo -e "\033[1;36m00\033[1;31m â€¢ \033[1;36mSAIR"
-echo -e "\033[1;32m=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—\033[0m"
+echo -e "\033[1;33m=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×\033[0m"
+echo -e "\033[1;36m13\033[1;31m • \033[1;36mADICIONAR HOST"
+echo -e "\033[1;36m14\033[1;31m • \033[1;36mREMOVER HOST"
+echo -e "\033[1;36m15\033[1;31m • \033[1;36mUSER BACKUP"
+echo -e "\033[1;36m16\033[1;31m • \033[1;36mSPEED TEST"
+echo -e "\033[1;36m17\033[1;31m • \033[1;36mTRAFEGO"
+echo -e "\033[1;36m18\033[1;31m • \033[1;36mTCPTWEAKER"
+echo -e "\033[1;36m19\033[1;31m • \033[1;36mDETALHES"
+echo -e "\033[1;36m20\033[1;31m • \033[1;36mOTIMIZAR"
+echo -e "\033[1;36m21\033[1;31m • \033[1;36mVOLTAR"
+echo -e "\033[1;36m00\033[1;31m • \033[1;36mSAIR"
+echo -e "\033[1;32m=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×\033[0m"
 echo -ne "\033[1;32mQual a opcao: \033[0m"; read x
 clear
 case $x in
@@ -103,29 +104,29 @@ else
 	opn="\033[1;31mOFF"
 fi
 system=$(cat /etc/issue.net)
-echo -e "\033[1;33m=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—\033[0m"
+echo -e "\033[1;33m=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×\033[0m"
 echo -e "\033[1;32mHORA\033[1;37m: \033[1;31m$(printf '%(%H:%M:%S)T\n')\033[0m   \033[1;32mDATA\033[1;37m: \033[1;31m$(printf '%(%d/%m/%Y)T\n')\033[0m"
-echo -e "\033[1;33m=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—\033[0m"
+echo -e "\033[1;33m=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×\033[0m"
 if [ "$system" ]; then
 echo -e "\033[1;32mSistema\033[1;37m: \033[1;31m$system\033[0m"
 else
 echo -e "\033[1;32mSistema: \033[1;33m[ \033[1;31mNao disponivel \033[0m"
 fi
-echo -e "\033[1;33m=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—\033[0m"
-echo -e "\033[1;36m01\033[1;31m â€¢ \033[1;36mCRIAR USUARIO"
-echo -e "\033[1;36m02\033[1;31m â€¢ \033[1;36mCRIAR TESTE"
-echo -e "\033[1;36m03\033[1;31m â€¢ \033[1;36mREMOVER USUARIO"
-echo -e "\033[1;36m04\033[1;31m â€¢ \033[1;36mMONITOR ONLINE"
-echo -e "\033[1;36m05\033[1;31m â€¢ \033[1;36mALTERAR LIMITE"
-echo -e "\033[1;36m06\033[1;31m â€¢ \033[1;36mALTERAR SENHA"
-echo -e "\033[1;36m07\033[1;31m â€¢ \033[1;36mALTERAR DATA"
-echo -e "\033[1;36m08\033[1;31m â€¢ \033[1;36mREMOVER EXPIRADOS"
-echo -e "\033[1;36m09\033[1;31m â€¢ \033[1;36mLIMITAR SSH $slimit"
-echo -e "\033[1;36m10\033[1;31m â€¢ \033[1;36mBAD VPN $sudp"
-echo -e "\033[1;36m11\033[1;31m â€¢ \033[1;36mOPENVPN $opn"
-echo -e "\033[1;36m12\033[1;31m â€¢ \033[1;36mMAIS\033[1;31mâ‰ˆ\033[1;36mOPCOES"
-echo -e "\033[1;36m00\033[1;31m â€¢ \033[1;36mSAIR"
-echo -e "\033[1;33m=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—=Ã—\033[0m"
+echo -e "\033[1;33m=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×\033[0m"
+echo -e "\033[1;36m01\033[1;31m • \033[1;36mCRIAR USUARIO"
+echo -e "\033[1;36m02\033[1;31m • \033[1;36mCRIAR TESTE"
+echo -e "\033[1;36m03\033[1;31m • \033[1;36mREMOVER USUARIO"
+echo -e "\033[1;36m04\033[1;31m • \033[1;36mMONITOR ONLINE"
+echo -e "\033[1;36m05\033[1;31m • \033[1;36mALTERAR LIMITE"
+echo -e "\033[1;36m06\033[1;31m • \033[1;36mALTERAR SENHA"
+echo -e "\033[1;36m07\033[1;31m • \033[1;36mALTERAR DATA"
+echo -e "\033[1;36m08\033[1;31m • \033[1;36mREMOVER EXPIRADOS"
+echo -e "\033[1;36m09\033[1;31m • \033[1;36mLIMITAR SSH $slimit"
+echo -e "\033[1;36m10\033[1;31m • \033[1;36mBAD VPN $sudp"
+echo -e "\033[1;36m11\033[1;31m • \033[1;36mOPENVPN $opn"
+echo -e "\033[1;36m12\033[1;31m • \033[1;36mMAIS\033[1;31m≈\033[1;36mOPCOES"
+echo -e "\033[1;36m00\033[1;31m • \033[1;36mSAIR"
+echo -e "\033[1;33m=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×\033[0m"
 echo -ne "\033[1;32mSelecione uma opcao: \033[0m"; read x
 clear
 case $x in
