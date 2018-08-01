@@ -1,6 +1,5 @@
 #!/bin/bash
 clear
-tput setaf 7 ; tput setab 1 ; tput bold ; printf '%28s%s%-18s\n' "Monitor Online"
 database="/root/usuarios.db"
 fun_drop () {
 port_dropbear=`ps aux | grep dropbear | awk NR==1 | awk '{print $17;}'`
