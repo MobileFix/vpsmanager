@@ -23,7 +23,7 @@ if [ -f "/root/usuarios.db" ]; then
 	echo -e "\033[1;37m[1]\033[1;33m Manter Base de Dados Atual"
 	echo -e "\033[1;37m[2]\033[1;33m Criar uma Nova Base de Dados\033[1;32m"
   echo ""
-	read -p "OpÃ§Ã£o?: " -e -i 1 opcdb
+	read -p "Opcão?: " -e -i 1 opcdb
 else
 	awk -F : '$3 >= 500 { print $1 " 1" }' /etc/passwd | grep -v '^nobody' > /root/usuarios.db
 fi
