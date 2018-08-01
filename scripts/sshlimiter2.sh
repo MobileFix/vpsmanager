@@ -32,6 +32,6 @@ tput setaf 7 ; tput setab 4 ; printf '  %-30s%s\n' "Usuário" "Conexão/Limite "
 			fi
 		fi
 	done < "$database"
-	sleep 5
+	sleep 30
 	clear
 done
