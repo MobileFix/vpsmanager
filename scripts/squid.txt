@@ -1,0 +1,16 @@
+acl payload url_regex -i "/etc/squid/payload.txt"
+acl all src 0.0.0.0/0"
+
+http_access allow url1
+http_access allow url2
+http_access allow url3
+http_access allow payload
+http_access deny all
+ 
+http_port 80
+
+visible_hostname by TwoSSH
+ 
+via off
+forwarded_for off
+pipeline_prefetch off
