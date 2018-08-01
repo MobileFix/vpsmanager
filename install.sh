@@ -36,8 +36,9 @@ apt-get install squid3 nano python-pip inxi python htop -y > /dev/null 2>&1
 echo -e "\n\033[1;33mAguarde\033[1;32m.\033[1;31m.\033[1;33m.\033[0m"
 apt-get install unzip dos2unix bc screen wget nload dropbear -y > /dev/null 2>&1
 pip install speedtest-cli > /dev/null 2>&1
-killall apache2 > /dev/null 2>&1
-apt-get purge apache2 -y > /dev/null 2>&1
+apt-get install apache2 zip -y
+sed -i "s/Listen 80/Listen 81/g" /etc/apache2/ports.conf
+service apache2 restart
 echo -e "\n\033[1;37m[\033[1;32mDEFININDO CONFIGURACOES !\033[1;37m]\033[0m"
 if [ -f "/usr/sbin/ufw" ] ; then
 	ufw allow 2466/tcp ; ufw allow 443/tcp ; ufw allow 80/tcp ; ufw allow 3128/tcp ; ufw allow 8799/tcp ; ufw allow 8080/tcp 1> /dev/null 2> /dev/stdout
