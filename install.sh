@@ -132,7 +132,7 @@ dpkg-reconfigure --frontend noninteractive tzdata > /dev/null 2>&1
 # menu
 cd
 echo "menu" >> .bash_profile
-rm /root/install
+rm /root/install.sh
 clear
 echo -e "\n\033[1;37m[\033[1;31mâ€¢ \033[1;32mINSTALACAO CONCLUIDA !\033[1;31mâ€¢ \033[1;37m]\033[0m"
 echo ""
