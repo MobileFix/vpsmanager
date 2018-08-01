@@ -17,7 +17,7 @@ echo -e "\n\033[1;33mAguarde\033[1;32m.\033[1;31m.\033[1;33m.\033[0m"
 apt-get update -y > /dev/null 2>&1
 if [ -f "/root/usuarios.db" ]; then
     echo ""
-	echo  -e "\033[1;33mUma base de usuÃ¡rios \033[1;32m(usuarios.db)\033[1;33m foi encontrada!"
+	echo  -e "\033[1;33mUma base de usuários \033[1;32m(usuarios.db)\033[1;33m foi encontrada!"
 	echo -e "\033[1;32m\nOque deseja fazer?"
 	echo ""
 	echo -e "\033[1;37m[1]\033[1;33m Manter Base de Dados Atual"
@@ -113,7 +113,7 @@ wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/menu.sh 
 chmod +x /bin/menu
 wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/criarteste.sh -O /bin/criarteste > /dev/null 2>&1
 chmod +x /bin/criarteste
-wget -O /etc/default/dropbear https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/drop_config
+wget -O /etc/default/dropbear https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/drop_config > /dev/null 2>&1
 echo -e "\n\033[1;37m[\033[1;32mFINALIZANDO INSTALACAO !\033[1;37m]\033[0m"
 sed -i '3i\127.0.0.1 d1n212ccp6ldpw.cloudfront.net\' /etc/hosts
 sleep 1
