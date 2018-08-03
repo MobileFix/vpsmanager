@@ -5,7 +5,7 @@ echo $$ > /tmp/kids
 while true
 do
 tput setaf 7 ; tput setab 1 ; tput bold ; printf '%28s%s%-18s\n' "Monitor Online"
-tput setaf 7 ; tput setab 1 ; printf '  %-30s%s\n' "UsuÃ¡rio" "ConexÃ£o/Limite " ; echo "" ; tput sgr0
+tput setaf 7 ; tput setab 1 ; printf '  %-30s%s\n' "Usuário" "Conexão/Limite " ; echo "" ; tput sgr0
 	while read usline
 	do
 		user="$(echo $usline | cut -d' ' -f1)"
