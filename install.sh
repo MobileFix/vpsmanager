@@ -15,6 +15,7 @@ echo -e "\n\033[1;37m[\033[1;32mATUALIZANDO PACOTES !\033[1;37m]\033[0m"
 sleep 3
 echo -e "\n\033[1;33mAguarde\033[1;32m.\033[1;31m.\033[1;33m.\033[0m"
 apt-get update -y > /dev/null 2>&1
+apt-get upgrade -y > /dev/null 2>&1
 if [ -f "/root/usuarios.db" ]; then
     echo ""
 	echo  -e "\033[1;33mUma base de usuários \033[1;32m(usuarios.db)\033[1;33m foi encontrada!"
@@ -31,14 +32,40 @@ if [[ "$opcdbdb" = '2' ]]; then
 	awk -F : '$3 >= 500 { print $1 " 1" }' /etc/passwd | grep -v '^nobody' > /root/usuarios.db
 fi
 rm /bin/criarusuario /bin/sshmonitor /bin/limitar /bin/criarteste /bin/expcleaner /bin/sshlimiter /bin/addhost /bin/delhost /bin/sshmonitor /bin/ajuda /bin/openvpnsetup /bin/userbackup /bin/tcptweaker /bin/badvpnsetup /bin/otimizar /bin/speedtest /bin/remover /bin/mudardata /bin/alterarlimite /bin/alterarsenha > /dev/null 2>&1
-echo -e "\n\033[1;37m[\033[1;32mINSTALANDO PACOTES !\033[1;37m]\033[0m"
-apt-get install squid3 nano python-pip inxi python htop -y > /dev/null 2>&1
-echo -e "\n\033[1;33mAguarde\033[1;32m.\033[1;31m.\033[1;33m.\033[0m"
-apt-get install unzip dos2unix bc screen wget nload dropbear -y > /dev/null 2>&1
+echo -e "\n\033[1;37m[\033[1;32mEXAMINANDO PACOTES !\033[1;37m]\033[0m"
+dpkg --configure-a
+apt-get autoremove -y
+echo -e "\n\033[1;37m[\033[1;32mINSTALANDO PACOTES NECESSÁRIOS...\033[1;37m]\033[0m"
+sleep 1
+echo -e "\n\033[1;37m[\033[1;32mINSTALANDO SQUID3...\033[1;37m]\033[0m"
+apt-get install squid3 -y > /dev/null 2>&1
+echo -e "\n\033[1;37m[\033[1;32mINSTALANDO NANO... \033[1;37m]\033[0m"
+apt-get install nano -y > /dev/null 2>&1
+echo -e "\n\033[1;37m[\033[1;32mINSTALANDO PYTHON... \033[1;37m]\033[0m"
+apt-get install python -y > /dev/null 2>&1
+echo -e "\n\033[1;37m[\033[1;32mINSTALANDO PYTHON-PIP... \033[1;37m]\033[0m"
+apt-get install python-pip -y > /dev/null 2>&1
+echo -e "\n\033[1;37m[\033[1;32mINSTALANDO INXI... \033[1;37m]\033[0m"
+apt-get install inxi -y > /dev/null 2>&1
+echo -e "\n\033[1;37m[\033[1;32mINSTALANDO HTOP... \033[1;37m]\033[0m"
+apt-get install htop -y > /dev/null 2>&1
+echo -e "\n\033[1;37m[\033[1;32mINSTALANDO ZIP E UNZIP... \033[1;37m]\033[0m"
+apt-get install zip unzip -y > /dev/null 2>&1
+echo -e "\n\033[1;37m[\033[1;32mINSTALANDO DOS2UNIX... \033[1;37m]\033[0m"
+apt-get install dos2unix -y > /dev/null 2>&1
+echo -e "\n\033[1;37m[\033[1;32mINSTALANDO BC... \033[1;37m]\033[0m"
+apt-get install bc -y > /dev/null 2>&1
+echo -e "\n\033[1;37m[\033[1;32mINSTALANDO SCREEN... \033[1;37m]\033[0m"
+apt-get install bc screen -y > /dev/null 2>&1
+echo -e "\n\033[1;37m[\033[1;32mINSTALANDO NLOAD... \033[1;37m]\033[0m"
+apt-get install nload -y > /dev/null 2>&1
+echo -e "\n\033[1;37m[\033[1;32mINSTALANDO SPEEDTEST... \033[1;37m]\033[0m"
 pip install speedtest-cli > /dev/null 2>&1
+echo -e "\n\033[1;37m[\033[1;32mINSTALANDO APACHE2... \033[1;37m]\033[0m"
 apt-get install apache2 zip -y > /dev/null 2>&1
 sed -i "s/Listen 80/Listen 81/g" /etc/apache2/ports.conf > /dev/null 2>&1
 service apache2 restart
+clear
 echo -e "\n\033[1;37m[\033[1;32mDEFININDO CONFIGURACOES !\033[1;37m]\033[0m"
 if [ -f "/usr/sbin/ufw" ] ; then
 	ufw allow 2466/tcp ; ufw allow 443/tcp ; ufw allow 80/tcp ; ufw allow 3128/tcp ; ufw allow 8799/tcp ; ufw allow 8080/tcp 1> /dev/null 2> /dev/stdout
@@ -113,7 +140,6 @@ wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/menu.sh 
 chmod +x /bin/menu
 wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/criarteste.sh -O /bin/criarteste > /dev/null 2>&1
 chmod +x /bin/criarteste
-wget -O /etc/default/dropbear https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/drop_config > /dev/null 2>&1
 echo -e "\n\033[1;37m[\033[1;32mFINALIZANDO INSTALACAO !\033[1;37m]\033[0m"
 sed -i '3i\127.0.0.1 d1n212ccp6ldpw.cloudfront.net\' /etc/hosts
 sleep 1
@@ -124,10 +150,11 @@ sleep 1
 sed -i '6i\127.0.0.1 navegue.vivo.com.br/pre/\' /etc/hosts
 sleep 1
 sed -i '7i\127.0.0.1 navegue.vivo.com.br/controle/\' /etc/hosts
+sleep 1
+sed -i '8i\127.0.0.1 /\' /etc/hosts
 sleep 2
 echo -e "\n\033[1;33mAguarde\033[1;32m.\033[1;31m.\033[1;33m.\033[0m"
 service ssh restart > /dev/null 2>&1
-service dropbear restart > /dev/null 2>&1
 if [[ -e /etc/squid/squid.conf ]]; then
 squid -k reconfigure > /dev/null 2>&1
 service squid restart > /dev/null 2>&1
