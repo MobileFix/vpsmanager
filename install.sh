@@ -15,7 +15,6 @@ echo -e "\n\033[1;37m[\033[1;32mATUALIZANDO PACOTES !\033[1;37m]\033[0m"
 sleep 3
 echo -e "\n\033[1;33mAguarde\033[1;32m.\033[1;31m.\033[1;33m.\033[0m"
 apt-get update -y > /dev/null 2>&1
-apt-get upgrade -y > /dev/null 2>&1
 if [ -f "/root/usuarios.db" ]; then
     echo ""
 	echo  -e "\033[1;33mUma base de usuários \033[1;32m(usuarios.db)\033[1;33m foi encontrada!"
