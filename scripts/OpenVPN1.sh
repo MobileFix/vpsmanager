@@ -63,7 +63,7 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 	clear
 		tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-15s\n' "MENU OPENVPN" ; tput sgr0
 		echo ""
-		echo -e "\033[1;32mO que vocÃª deseja fazer?"
+		echo -e "\033[1;32mO que você deseja fazer?"
 		echo ""
 		echo -e "\033[1;36m1\033[1;31m - \033[1;36mCriar novo arquivo"
 		echo -e "\033[1;36m2\033[1;31m - \033[1;36mRemover um arquivo"
@@ -118,7 +118,7 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 			;;
 			3) 
 			echo ""
-			read -p "VocÃª deseja remover OpenVPN? [y/n]: " -e -i n REMOVE
+			read -p "Você deseja remover OpenVPN? [y/n]: " -e -i n REMOVE
 			if [[ "$REMOVE" = 'y' ]]; then
 				PORT=$(grep '^port ' /etc/openvpn/server.conf | cut -d " " -f 2)
 				PROTOCOL=$(grep '^proto ' /etc/openvpn/server.conf | cut -d " " -f 2)
@@ -414,7 +414,7 @@ float" > /etc/openvpn/client-common.txt
 	echo -e "\033[1;32mConcluido!\033[1;33m"
    service ssh restart
 	echo ""
-	echo -e "Seu arquivo estÃ¡ disponivel em" ~/"$CLIENT.ovpn"
+	echo -e "Seu arquivo está disponivel em" ~/"$CLIENT.ovpn"
 	sleep 3
 fi
 sed -i '$ i\echo 1 > /proc/sys/net/ipv4/ip_forward' /etc/rc.local
