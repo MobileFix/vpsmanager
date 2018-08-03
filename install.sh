@@ -122,7 +122,7 @@ wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/sshlimit
 chmod +x /bin/sshlimiter
 wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/alterarlimite.sh -O /bin/alterarlimite > /dev/null 2>&1
 chmod +x /bin/alterarlimite
-wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/sshmonitor.sh -O /bin/sshmonitor > /dev/null 2>&1
+wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/sshmonitor2.sh -O /bin/sshmonitor > /dev/null 2>&1
 chmod +x /bin/sshmonitor
 wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/tcptweaker.sh -O /bin/tcptweaker > /dev/null 2>&1
 chmod +x /bin/tcptweaker
