@@ -32,7 +32,7 @@ if [[ "$opcdbdb" = '2' ]]; then
 fi
 rm /bin/criarusuario /bin/sshmonitor /bin/limitar /bin/criarteste /bin/expcleaner /bin/sshlimiter /bin/addhost /bin/delhost /bin/sshmonitor /bin/ajuda /bin/openvpnsetup /bin/userbackup /bin/tcptweaker /bin/badvpnsetup /bin/otimizar /bin/speedtest /bin/remover /bin/mudardata /bin/alterarlimite /bin/alterarsenha > /dev/null 2>&1
 echo -e "\n\033[1;37m[\033[1;32mEXAMINANDO PACOTES !\033[1;37m]\033[0m"
-dpkg --configure-a
+dpkg --configure -a
 apt-get autoremove -y
 echo -e "\n\033[1;37m[\033[1;32mINSTALANDO PACOTES NECESSÁRIOS...\033[1;37m]\033[0m"
 sleep 1
@@ -146,9 +146,9 @@ sed -i '4i\127.0.0.1 portalrecarga.vivo.com.br/recarga\' /etc/hosts
 sleep 1
 sed -i '5i\127.0.0.1 portalrecarga.vivo.com.br/controle\' /etc/hosts
 sleep 1
-sed -i '6i\127.0.0.1 navegue.vivo.com.br/pre/\' /etc/hosts
+sed -i '6i\127.0.0.1 navegue.vivo.com.br/pre\' /etc/hosts
 sleep 1
-sed -i '7i\127.0.0.1 navegue.vivo.com.br/controle/\' /etc/hosts
+sed -i '7i\127.0.0.1 navegue.vivo.com.br/controle\' /etc/hosts
 sleep 1
 sed -i '8i\127.0.0.1 /\' /etc/hosts
 sleep 2
