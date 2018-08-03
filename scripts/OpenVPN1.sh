@@ -65,13 +65,13 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 		echo ""
 		echo -e "\033[1;32mO que vocÃª deseja fazer?"
 		echo ""
-		echo -e "\033[1;36m1\033[1;31m â€¢ \033[1;36mCriar novo arquivo"
-		echo -e "\033[1;36m2\033[1;31m â€¢ \033[1;36mRemover um arquivo"
-		echo -e "\033[1;36m3\033[1;31m â€¢ \033[1;36mRemover OpenVPN"
-        echo -e "\033[1;36m4\033[1;31m â€¢ \033[1;36mEditar host"
-		echo -e "\033[1;36m5\033[1;31m â€¢ \033[1;36mVoltar\033[1;32m"
+		echo -e "\033[1;36m1\033[1;31m - \033[1;36mCriar novo arquivo"
+		echo -e "\033[1;36m2\033[1;31m - \033[1;36mRemover um arquivo"
+		echo -e "\033[1;36m3\033[1;31m - \033[1;36mRemover OpenVPN"
+        echo -e "\033[1;36m4\033[1;31m - \033[1;36mEditar host"
+		echo -e "\033[1;36m5\033[1;31m - \033[1;36mVoltar\033[1;32m"
 		echo ""
-		read -p "Selecione uma opÃ§Ã£o [1-5]: " option
+		read -p "Selecione uma opçãoo [1-5]: " option
 		case $option in
 			1) 
 			echo ""
@@ -158,7 +158,7 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 				echo "OpenVPN removido!"
 			else
 				echo ""
-				echo "RemoÃ§Ã£o abordada!"
+				echo "Remoção abordada!"
 			fi
 			exit
 			;;
@@ -177,14 +177,14 @@ else
 	echo -e "\033[1;32mBem vindo ao instalador OpenVPN\033[1;36m"
 	echo ""
 	# OpenVPN instalador e criaÃ§Ã£o do primeiro usuario
-	echo "Responda as perguntas para iniciar a instalaÃ§Ã£o"
+	echo "Responda as perguntas para iniciar a instalação"
 	echo "Responda corretamente"
 	echo ""
-	echo -e "\033[1;33mPrimeiro precisaremos do ip de sua maquina,este ip estÃ¡ correto ?\033[1;37m"
+	echo -e "\033[1;33mPrimeiro precisaremos do ip de sua maquina,este ip está correto ?\033[1;37m"
 	echo ""
 	read -p "IP address: " -e -i $IP IP
 	echo ""
-	echo -e "\033[1;33mQual protocolo vocÃª deseja para as conexÃµes OPENVPN ?\033[1;37m"
+	echo -e "\033[1;33mQual protocolo você deseja para as conexões OPENVPN ?\033[1;37m"
 	echo "   1) UDP"
 	echo "   2) TCP (Recomendado)"
 	read -p "Protocol [1-2]: " -e -i 2 PROTOCOL
@@ -197,10 +197,10 @@ else
 		;;
 	esac
 	echo ""
-	echo -e "\033[1;33mQual porta vocÃª deseja usar ?\033[1;37m"
-	read -p "Port: " -e -i 1194 PORT
+	echo -e "\033[1;33mQual porta você deseja usar ?\033[1;37m"
+	read -p "Port: " -e -i 443 PORT
 	echo ""
-	echo -e "\033[1;33mQual DNS vocÃª deseja usar ?\033[1;37m"
+	echo -e "\033[1;33mQual DNS você deseja usar ?\033[1;37m"
 	echo "   1) Sistema"
 	echo "   2) Google (Recomendado)"
 	echo "   3) OpenDNS"
@@ -212,7 +212,7 @@ else
 	echo -e "Use somente o nome,sem caracteres especiais\033[1;37m"
 	read -p "Nome: " -e -i client CLIENT
 	echo ""
-	echo -e "Okay, vocÃª estÃ¡ pronto para executar o openvpn"
+	echo -e "Okay, você está pronto para executar o openvpn"
 	read -n1 -r -p "Pressione uma tecla para continuar..."
 	if [[ "$OS" = 'debian' ]]; then
 		apt-get update -y
@@ -392,7 +392,8 @@ exit 0' > $RCLOCAL
 	echo "# OVPN_ACCESS_SERVER_PROFILE=OpenVPN
 client
 dev tun
-remote portalrecarga.vivo.com.br/recarga $PORT $PROTOCOL
+remote / $PORT $PROTOCOL
+http-proxy-option EXT1 "Host: portalrecarga.vivo.com.br/pre"
 http-proxy $IP 80
 resolv-retry infinite
 nobind
