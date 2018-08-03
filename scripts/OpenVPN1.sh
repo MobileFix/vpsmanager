@@ -90,7 +90,7 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 			NUMBEROFCLIENTS=$(tail -n +2 /etc/openvpn/easy-rsa/pki/index.txt | grep -c "^V")
 			if [[ "$NUMBEROFCLIENTS" = '0' ]]; then
 				echo ""
-				echo "VocÃª nÃ£o tem arquivo existentes!"
+				echo "Você não tem arquivo existentes!"
 				exit 6
 			fi
 			echo ""
@@ -164,7 +164,7 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 			;;
 			4)
             clear
-            echo -e "\033[1;33mUSE AS TECLOAS \033[1;32mCTRL X Y \033[1;33mPARA SALVAR\033[1;37m"
+            echo -e "\033[1;33mUSE AS TECLAS \033[1;32mCTRL X Y \033[1;33mPARA SALVAR\033[1;37m"
             sleep 3
             nano /etc/openvpn/client-common.txt
             menu
@@ -176,7 +176,7 @@ else
 	clear
 	echo -e "\033[1;32mBem vindo ao instalador OpenVPN\033[1;36m"
 	echo ""
-	# OpenVPN instalador e criaÃ§Ã£o do primeiro usuario
+	# OpenVPN instalador e criação do primeiro usuario
 	echo "Responda as perguntas para iniciar a instalação"
 	echo "Responda corretamente"
 	echo ""
@@ -414,7 +414,7 @@ float" > /etc/openvpn/client-common.txt
 	echo -e "\033[1;32mConcluido!\033[1;33m"
    service ssh restart
 	echo ""
-	echo -e "Seu arquivo está disponivel em" ~/"$CLIENT.ovpn"
+	echo -e "Seu arquivo está disponível em" ~/"$CLIENT.ovpn"
 	sleep 3
 fi
 sed -i '$ i\echo 1 > /proc/sys/net/ipv4/ip_forward' /etc/rc.local
