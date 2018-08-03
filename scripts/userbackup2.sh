@@ -21,7 +21,7 @@ if [[ "$opcao" = '1' ]]; then
        sleep 2
 		echo ""
 		echo -e "\033[1;33mO Arquivo \033[1;32mbackup.vps"
-       echo -e "\033[1;33mfoi criado com sucesso no diretÃ³rio \033[1;31m/root\033[0m"
+       echo -e "\033[1;33mfoi criado com sucesso no diretório \033[1;31m/root\033[0m"
 		echo ""
 	else
 		echo ""
@@ -31,7 +31,7 @@ if [[ "$opcao" = '1' ]]; then
        sleep 2s
 		echo ""
 		echo -e "\033[1;33mO Arquivo \033[1;32mbackup.vps"
-       echo -e "\033[1;33mfoi criado com sucesso no diretÃ³rio \033[1;31m/root\033[0m"
+       echo -e "\033[1;33mfoi criado com sucesso no diretório \033[1;31m/root\033[0m"
 		echo ""
 	fi
 fi
@@ -47,13 +47,13 @@ if [[ "$opcao" = '2' ]]; then
 		tar -xvf backup.vps
 		rm /backup.vps
 		echo ""
-		echo -e "\033[1;36mUsuÃ¡rios \033[1;33me\033[1;36m \033[1;33msenhas importados com sucesso.\033[0m"
+		echo -e "\033[1;36mUsuários \033[1;33me\033[1;36m \033[1;33msenhas importados com sucesso.\033[0m"
 		echo ""
 		exit
 	else
 		echo ""
-		echo -e "\033[1;33mO arquivo /root/\033[1;32mbackup.vps \033[1;33mnÃ£o foi encontrado!"
-		echo -e "\033[1;33mCeritifique-se que ele esteja localizado no diretÃ³rio /root/ com o nome \033[1;32mbackup.vps\033[0m"
+		echo -e "\033[1;33mO arquivo /root/\033[1;32mbackup.vps \033[1;33mnão foi encontrado!"
+		echo -e "\033[1;33mCeritifique-se que ele esteja localizado no diretório /root/ com o nome \033[1;32mbackup.vps\033[0m"
 		echo ""
 		exit
 	fi
