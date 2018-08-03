@@ -36,7 +36,7 @@ echo -e "\033[1;33mArquitetura: \033[1;37m$(uname -p)"
 echo ""
 else
 echo -e "\033[1;31mProcessador\033[0m"
-echo "NÃ£o foi possivel obter informaÃ§Ãµes sobre o Processador"
+echo "Não foi possivel obter informações sobre o Processador"
 fi
 
 if free 1>/dev/null 2>/dev/null
@@ -51,5 +51,5 @@ echo -e "\033[1;33mEm Uso: \033[1;37m$ram3"
 echo -e "\033[1;33mLivre: \033[1;37m$ram2"
 else
 echo -e "\033[1;32mMemoria RAM\033[0m"
-echo "NÃ£o foi possivel obter informaÃ§Ãµes sobre a memoria RAM"nÃ£o
+echo "Não foi possivel obter informações sobre a memoria RAM"
 fi
