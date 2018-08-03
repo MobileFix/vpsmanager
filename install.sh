@@ -32,8 +32,8 @@ if [[ "$opcdbdb" = '2' ]]; then
 fi
 rm /bin/criarusuario /bin/sshmonitor /bin/limitar /bin/criarteste /bin/expcleaner /bin/sshlimiter /bin/addhost /bin/delhost /bin/sshmonitor /bin/ajuda /bin/openvpnsetup /bin/userbackup /bin/tcptweaker /bin/badvpnsetup /bin/otimizar /bin/speedtest /bin/remover /bin/mudardata /bin/alterarlimite /bin/alterarsenha > /dev/null 2>&1
 echo -e "\n\033[1;37m[\033[1;32mEXAMINANDO PACOTES !\033[1;37m]\033[0m"
-dpkg --configure -a
-apt-get autoremove -y
+dpkg --configure -a > /dev/null 2>&1
+apt-get autoremove -y > /dev/null 2>&1
 echo -e "\n\033[1;37m[\033[1;32mINSTALANDO PACOTES NECESSÁRIOS...\033[1;37m]\033[0m"
 sleep 1
 echo -e "\n\033[1;37m[\033[1;32mINSTALANDO SQUID3...\033[1;37m]\033[0m"
