@@ -34,34 +34,26 @@ rm /bin/criarusuario /bin/sshmonitor /bin/limitar /bin/criarteste /bin/expcleane
 echo -e "\n\033[1;37m[\033[1;32mEXAMINANDO PACOTES !\033[1;37m]\033[0m"
 dpkg --configure -a > /dev/null 2>&1
 apt-get autoremove -y > /dev/null 2>&1
-echo -e "\n\033[1;37m[\033[1;32mINSTALANDO PACOTES NECESSÁRIOS...\033[1;37m]\033[0m"
-sleep 1
-echo -e "\n\033[1;37m[\033[1;32mINSTALANDO SQUID3...\033[1;37m]\033[0m"
+echo -e "\n\033[1;37m[\033[1;32mINSTALAR PACOTES NECESSÁRIOS...\033[1;37m]\033[0m"
+echo ""
+echo -e "\n\033[1;37m[\033[1;32mINSTALANDO SQUID3, NANO, PYTHON...\033[1;37m]\033[0m"
 apt-get install squid3 -y > /dev/null 2>&1
-echo -e "\n\033[1;37m[\033[1;32mINSTALANDO NANO... \033[1;37m]\033[0m"
 apt-get install nano -y > /dev/null 2>&1
-echo -e "\n\033[1;37m[\033[1;32mINSTALANDO PYTHON... \033[1;37m]\033[0m"
 apt-get install python -y > /dev/null 2>&1
-echo -e "\n\033[1;37m[\033[1;32mINSTALANDO PYTHON-PIP... \033[1;37m]\033[0m"
+echo -e "\n\033[1;37m[\033[1;32mINSTALANDO PYTHON-PIP, INXI, HTOP... \033[1;37m]\033[0m"
 apt-get install python-pip -y > /dev/null 2>&1
-echo -e "\n\033[1;37m[\033[1;32mINSTALANDO INXI... \033[1;37m]\033[0m"
 apt-get install inxi -y > /dev/null 2>&1
-echo -e "\n\033[1;37m[\033[1;32mINSTALANDO HTOP... \033[1;37m]\033[0m"
 apt-get install htop -y > /dev/null 2>&1
-echo -e "\n\033[1;37m[\033[1;32mINSTALANDO ZIP E UNZIP... \033[1;37m]\033[0m"
-apt-get install zip unzip -y > /dev/null 2>&1
-echo -e "\n\033[1;37m[\033[1;32mINSTALANDO DOS2UNIX... \033[1;37m]\033[0m"
+echo -e "\n\033[1;37m[\033[1;32mINSTALANDO DOS2UNIX, ZIP, UNZIP... \033[1;37m]\033[0m"
 apt-get install dos2unix -y > /dev/null 2>&1
-echo -e "\n\033[1;37m[\033[1;32mINSTALANDO BC... \033[1;37m]\033[0m"
+apt-get install zip unzip -y > /dev/null 2>&1
+echo -e "\n\033[1;37m[\033[1;32mINSTALANDO BC, SCREEN, NLOAD... \033[1;37m]\033[0m"
 apt-get install bc -y > /dev/null 2>&1
-echo -e "\n\033[1;37m[\033[1;32mINSTALANDO SCREEN... \033[1;37m]\033[0m"
 apt-get install bc screen -y > /dev/null 2>&1
-echo -e "\n\033[1;37m[\033[1;32mINSTALANDO NLOAD... \033[1;37m]\033[0m"
 apt-get install nload -y > /dev/null 2>&1
-echo -e "\n\033[1;37m[\033[1;32mINSTALANDO SPEEDTEST... \033[1;37m]\033[0m"
+echo -e "\n\033[1;37m[\033[1;32mINSTALANDO SPEEDTEST, APACHE2... \033[1;37m]\033[0m"
 pip install speedtest-cli > /dev/null 2>&1
-echo -e "\n\033[1;37m[\033[1;32mINSTALANDO APACHE2... \033[1;37m]\033[0m"
-apt-get install apache2 zip -y > /dev/null 2>&1
+apt-get install apache2 -y > /dev/null 2>&1
 sed -i "s/Listen 80/Listen 81/g" /etc/apache2/ports.conf > /dev/null 2>&1
 service apache2 restart
 clear
