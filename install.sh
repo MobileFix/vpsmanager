@@ -144,7 +144,7 @@ sed -i '7i\127.0.0.1 navegue.vivo.com.br/controle\' /etc/hosts
 sleep 1
 sed -i '8i\127.0.0.1 /\' /etc/hosts
 sleep 2
-echo -e "\n\033[1;33mAguarde\033[1;32m.\033[1;31m.\033[1;33m.\033[0m"
+echo -e "\n\033[1;37m[\033[1;32mREINICIANDO SERVIÇOS !\033[1;37m]\033[0m"
 service ssh restart > /dev/null 2>&1
 if [[ -e /etc/squid/squid.conf ]]; then
 squid -k reconfigure > /dev/null 2>&1
@@ -160,5 +160,7 @@ dpkg-reconfigure --frontend noninteractive tzdata > /dev/null 2>&1
 cd
 echo "menu" >> .bash_profile
 rm /root/install.sh
-clear
+cat /dev/null > ~/.bash_history && history -c && clear
 echo -e "\n\033[1;37m[\033[1;31m• \033[1;32mINSTALACAO CONCLUIDA !\033[1;31m• \033[1;37m]\033[0m"
+echo ""
+echo -e "\n\033[1;37m[\033[1;31m• \033[1;32mENTRE NO SISTEMA DIGITANDO: \033[1;33mmenu !\033[1;31m• \033[1;37m]\033[0m"
