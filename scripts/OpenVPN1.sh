@@ -392,7 +392,7 @@ exit 0' > $RCLOCAL
 client
 dev tun
 remote / $PORT $PROTOCOL
-http-proxy-option EXT1 "Host: portalrecarga.vivo.com.br/recarga"
+http-proxy-option EXT1 '"Host: portalrecarga.vivo.com.br/recarga"'
 http-proxy $IP 80
 resolv-retry infinite
 nobind
