@@ -303,6 +303,7 @@ persist-key
 persist-tun
 status openvpn-status.log
 verb 3
+duplicate-cn
 crl-verify crl.pem
 client-to-client
 client-cert-not-required
