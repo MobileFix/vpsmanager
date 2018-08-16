@@ -1,3 +1,3 @@
+acl url0 dstdomain -i /
 acl url1 dstdomain -i 127.0.0.1
 acl url2 dstdomain -i localhost
-acl url4 dstdomain -i /
