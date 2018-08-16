@@ -209,7 +209,7 @@ else
 fi
 ;;
 11)
-OpenVPN
+openmenu
 echo ""
 echo -ne "\033[1;32mEnter..\033[0m"; read
 ;;
