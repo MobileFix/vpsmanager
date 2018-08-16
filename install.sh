@@ -35,15 +35,14 @@ fi
 if [[ "$opcdbdb" = '2' ]]; then
 	awk -F : '$3 >= 500 { print $1 " 1" }' /etc/passwd | grep -v '^nobody' > /root/usuarios.db
 fi
-rm /bin/criarusuario /bin/openmenu/ /bin/openvpn /bin/sshmonitor /bin/limitar /bin/criarteste /bin/expcleaner /bin/sshlimiter /bin/addhost /bin/delhost /bin/sshmonitor /bin/ajuda /bin/openvpnsetup /bin/userbackup /bin/tcptweaker /bin/badvpnsetup /bin/otimizar /bin/speedtest /bin/remover /bin/mudardata /bin/alterarlimite /bin/alterarsenha > /dev/null 2>&1
+rm /bin/criarusuario /bin/speedtest.py /bin/openmenu/ /bin/openvpn /bin/sshmonitor /bin/limitar /bin/criarteste /bin/expcleaner /bin/sshlimiter /bin/addhost /bin/delhost /bin/sshmonitor /bin/ajuda /bin/openvpnsetup /bin/userbackup /bin/tcptweaker /bin/badvpnsetup /bin/otimizar /bin/speedtest /bin/remover /bin/mudardata /bin/alterarlimite /bin/alterarsenha > /dev/null 2>&1
 echo -e "\033[1;32mINSTALANDO PACOTES NECESSÁRIOS...\033[0m"
 echo ""
 echo -e "\033[1;32mINSTALANDO SQUID3, NANO, PYTHON...\033[0m"
 apt-get install squid3 -y > /dev/null 2>&1
 apt-get install nano -y > /dev/null 2>&1
 apt-get install python -y > /dev/null 2>&1
-echo -e "\033[1;32mINSTALANDO PYTHON-PIP, INXI, HTOP...\033[0m"
-apt-get install python-pip -y > /dev/null 2>&1
+echo -e "\033[1;32mINSTALANDO INXI, HTOP...\033[0m"
 apt-get install inxi -y > /dev/null 2>&1
 apt-get install htop -y > /dev/null 2>&1
 echo -e "\033[1;32mINSTALANDO DOS2UNIX, ZIP, UNZIP...\033[0m"
@@ -53,8 +52,7 @@ echo -e "\033[1;32mINSTALANDO BC, SCREEN, NLOAD...\033[0m"
 apt-get install bc -y > /dev/null 2>&1
 apt-get install bc screen -y > /dev/null 2>&1
 apt-get install nload -y > /dev/null 2>&1
-echo -e "\033[1;32mINSTALANDO SPEEDTEST, APACHE2...\033[0m"
-pip install speedtest-cli > /dev/null 2>&1
+echo -e "\033[1;32mINSTALANDO APACHE2...\033[0m"
 apt-get install apache2 -y > /dev/null 2>&1
 sed -i "s/Listen 80/Listen 81/g" /etc/apache2/ports.conf > /dev/null 2>&1
 service apache2 restart
