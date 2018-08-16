@@ -124,6 +124,8 @@ wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/otimizar
 chmod +x /bin/otimizar
 wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/speedtest2.sh -O /bin/speedtest > /dev/null 2>&1
 chmod +x /bin/speedtest
+wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/speedtest.py -O /bin/speedtest.py
+chmod +x /bin/speedtest.py
 wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/detalhes2.sh -O /bin/detalhes > /dev/null 2>&1
 chmod +x /bin/detalhes
 wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/menu.sh -O /bin/menu > /dev/null 2>&1
