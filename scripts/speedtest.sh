@@ -6,7 +6,7 @@ sleep 2
 echo ""
 tput setaf 7 ; tput setab 1 ; printf '  %-30s%s\n' "------------------------------------------------------------------" ; echo "" ; tput sgr0
 cd /bin*
-python speedtest.py --share
+python /bin/speedtest.py --share
 echo ""
 
 tput setaf 7 ; tput setab 1 ; printf '  %-30s%s\n' "------------------------------------------------------------------" ; echo "" ; tput sgr0
