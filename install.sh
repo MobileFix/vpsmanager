@@ -35,7 +35,7 @@ fi
 if [[ "$opcdbdb" = '2' ]]; then
 	awk -F : '$3 >= 500 { print $1 " 1" }' /etc/passwd | grep -v '^nobody' > /root/usuarios.db
 fi
-rm /bin/criarusuario /bin/sshmonitor /bin/limitar /bin/criarteste /bin/expcleaner /bin/sshlimiter /bin/addhost /bin/delhost /bin/sshmonitor /bin/ajuda /bin/openvpnsetup /bin/userbackup /bin/tcptweaker /bin/badvpnsetup /bin/otimizar /bin/speedtest /bin/remover /bin/mudardata /bin/alterarlimite /bin/alterarsenha > /dev/null 2>&1
+rm /bin/criarusuario /bin/openmenu/ /bin/openvpn /bin/sshmonitor /bin/limitar /bin/criarteste /bin/expcleaner /bin/sshlimiter /bin/addhost /bin/delhost /bin/sshmonitor /bin/ajuda /bin/openvpnsetup /bin/userbackup /bin/tcptweaker /bin/badvpnsetup /bin/otimizar /bin/speedtest /bin/remover /bin/mudardata /bin/alterarlimite /bin/alterarsenha > /dev/null 2>&1
 echo -e "\033[1;32mINSTALANDO PACOTES NECESSÁRIOS...\033[0m"
 echo ""
 echo -e "\033[1;32mINSTALANDO SQUID3, NANO, PYTHON...\033[0m"
@@ -118,8 +118,8 @@ wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/tcptweak
 chmod +x /bin/tcptweaker
 wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/userbackup2.sh -O /bin/userbackup > /dev/null 2>&1
 chmod +x /bin/userbackup
-wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/OpenVPN1.sh -O /bin/OpenVPN > /dev/null 2>&1
-chmod +x /bin/OpenVPN
+wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/openmenu.sh -O /bin/openmenu > /dev/null 2>&1
+chmod +x /bin/openmenu
 wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/otimizar2.sh -O /bin/otimizar > /dev/null 2>&1
 chmod +x /bin/otimizar
 wget https://raw.githubusercontent.com/twossh/vpsmanager/master/scripts/speedtest2.sh -O /bin/speedtest > /dev/null 2>&1
