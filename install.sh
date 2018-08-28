@@ -11,13 +11,6 @@ echo -e "\033[1;31mIP invalido\033[1;32m"
 sleep 1
 clear; exit
 fi
-echo -e "\033[1;32mEXAMINANDO, LIMPANDO E CORRIGINDO PACOTES QUEBRADOS!\033[0m"
-rm -rf /var/lib/dpkg/info/*.* > /dev/null 2>&1
-apt-get clean > /dev/null 2>&1
-apt-get autoclean > /dev/null 2>&1
-apt-get install -f > /dev/null 2>&1
-apt-get autoremove -y > /dev/null 2>&1
-dpkg --configure -a > /dev/null 2>&1
 echo -e "\033[1;32mATUALIZANDO PACOTES !\033[0m"
 apt-get update -y > /dev/null 2>&1
 if [ -f "/root/usuarios.db" ]; then
