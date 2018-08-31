@@ -198,7 +198,7 @@ else
 	esac
 	echo ""
 	echo -e "\033[1;33mQual porta você deseja usar ?\033[1;37m"
-	read -p "Port: " -e -i 443 PORT
+	read -p "Port: " -e -i 1194 PORT
 	echo ""
 	echo -e "\033[1;33mQual DNS você deseja usar ?\033[1;37m"
 	echo "   1) Sistema"
@@ -206,16 +206,18 @@ else
 	echo "   3) OpenDNS"
 	echo "   4) NTT"
 	echo "   5) Hurricane Electric"
-	read -p "DNS [1-5]: " -e -i 2 DNS
+	echo "   6) Verisign"
+	echo "   7) Cloudflare (Recomendado em segunda opção)"
+	read -p "DNS [1-7]: " -e -i 2 DNS
 	echo ""
 	echo -e "\033[1;32mAgora,digite o nome de seu primeiro arquivo"
 	echo -e "Use somente o nome,sem caracteres especiais\033[1;37m"
 	read -p "Nome: " -e -i client CLIENT
 	echo ""
-	echo -e "Okay, você está pronto para executar o openvpn"
+	echo "Okay, você está pronto para executar o openvpn "
 	read -n1 -r -p "Pressione uma tecla para continuar..."
 	if [[ "$OS" = 'debian' ]]; then
-		apt-get update -y
+		apt-get upgrade
 		apt-get install openvpn iptables openssl ca-certificates -y
 	else
 		# Else, the distro is CentOS
@@ -259,7 +261,7 @@ key server.key
 dh dh.pem
 tls-auth ta.key 0
 topology subnet
-server 10.8.0.0 255.255.252.0
+server 10.8.0.0 255.255.255.0
 ifconfig-pool-persist ipp.txt" > /etc/openvpn/server.conf
 	echo 'push "redirect-gateway def1 bypass-dhcp"' >> /etc/openvpn/server.conf
 	# DNS
@@ -290,12 +292,12 @@ ifconfig-pool-persist ipp.txt" > /etc/openvpn/server.conf
 		echo 'push "dhcp-option DNS 64.6.65.6"' >> /etc/openvpn/server.conf
 		;;
 		7)
-		echo 'push "dhcp-option DNS 189.38.95.95"' >> /etc/openvpn/server.conf
-		echo 'push "dhcp-option DNS 216.146.36.36"' >> /etc/openvpn/server.conf
+		echo 'push "dhcp-option DNS 1.1.1.1"' >> /etc/openvpn/server.conf
+		echo 'push "dhcp-option DNS 1.0.0.1"' >> /etc/openvpn/server.conf
 	esac
 	echo "keepalive 10 20
 float
-cipher AES-256-CBC
+cipher AES-128-CBC
 comp-lzo yes
 user nobody
 group $GROUPNAME
@@ -303,7 +305,6 @@ persist-key
 persist-tun
 status openvpn-status.log
 verb 3
-duplicate-cn
 crl-verify crl.pem
 client-to-client
 client-cert-not-required
@@ -389,10 +390,12 @@ exit 0' > $RCLOCAL
 		fi
 	fi
 	# client-common.txt is created so we have a template to add further users later
-	echo "# OVPN_ACCESS_SERVER_PROFILE=OpenVPN
-client
+	echo "client
 dev tun
-remote / $PORT $PROTOCOL
+proto $PROTOCOL
+sndbuf 0
+rcvbuf 0
+remote / $PORT
 http-proxy-option CUSTOM-HEADER Host portalrecarga.vivo.com.br/recarga
 http-proxy $IP 80
 resolv-retry infinite
@@ -400,7 +403,7 @@ nobind
 persist-key
 persist-tun
 remote-cert-tls server
-cipher AES-256-CBC
+cipher AES-128-CBC
 comp-lzo yes
 setenv opt block-outside-dns
 key-direction 1
@@ -411,12 +414,12 @@ float" > /etc/openvpn/client-common.txt
 	# Generates the custom client.ovpn
 	newclient "$CLIENT"
 	echo ""
-	echo -e "\033[1;32mConcluido!\033[1;33m"
-   service ssh restart
+	echo "Concluido!"
 	echo ""
-	echo -e "Seu arquivo está disponível em" ~/"$CLIENT.ovpn"
-	sleep 3
+	echo "Seu arquivo está disponivel em" ~/"$CLIENT.ovpn"
+sleep 4
 fi
+
 sed -i '$ i\echo 1 > /proc/sys/net/ipv4/ip_forward' /etc/rc.local
 sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
 sed -i '$ i\iptables -A INPUT -p tcp --dport 25 -j DROP' /etc/rc.local
