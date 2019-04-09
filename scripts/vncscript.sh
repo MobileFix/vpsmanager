@@ -1,5 +1,5 @@
 #!/bin/bash
-
+clear
 IP=$(wget -qO- ipv4.icanhazip.com)
 
 if [ -d  /root/.vnc/ ];then
@@ -18,13 +18,14 @@ echo -e " Installing DEPENDENCE:"
 apt-get install iceweasel
 echo -e " Installing FIREFOX:"
 apt-get install firefox
+clear
 echo -e " ====================================================== }"
 echo -e " ESCOLHA UMA SENHA e DEPOIS CONFIRMA "
 echo -e " ====================================================== "
 vncserver
 echo -e " ====================================================== "
 echo -e " VNC se conecta usando o ip da vps na porta 5901"
-echo -e " Ex: $IP:5901"
+echo -e " Use: $IP:5901"
 echo -e " Para acessar a interface gráfica "
 echo -e " Baixe na PlayStore: VNC VIWER"
 elif [[ $vnc != "" ]]; then
