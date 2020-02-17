@@ -384,19 +384,12 @@ exit 0' > $RCLOCAL
 	# client-common.txt is created so we have a template to add further users later
 	echo "client
 dev tun
-proto $PROTOCOL
-sndbuf 0
-rcvbuf 0
-remote portalrecarga.vivo.com.br $PORT
+remote $IP $PORT $PROTOCOL
 http-proxy $IP 80
 resolv-retry infinite
-nobind
-persist-key
-persist-tun
 remote-cert-tls server
 cipher AES-256-CBC
 comp-lzo
-setenv opt block-outside-dns
 key-direction 1
 verb 3" > /etc/openvpn/client-common.txt
 	# Generates the custom client.ovpn
@@ -405,6 +398,5 @@ verb 3" > /etc/openvpn/client-common.txt
 	echo "Concluido!"
 	echo ""
 	echo "Seu arquivo está disponivel em" ~/"$CLIENT.ovpn"
-	echo "Para mais opções digite (openvpn)!"
 	echo "@TwoSSH"
 fi
